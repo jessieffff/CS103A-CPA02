@@ -58,7 +58,7 @@ router.post('/login',
       if (isMatch) {
         req.session.username = username //req.body
         req.session.user = user
-        res.redirect('/')
+        res.redirect('/about')
       } else {
         req.session.username = null
         req.session.user = null
@@ -68,6 +68,12 @@ router.post('/login',
       next(e)
     }
   })
+
+
+router.get("/register", (req,res) => {
+  res.render("register")
+})
+
 
 router.post('/signup',
   async (req,res,next) =>{
@@ -95,7 +101,8 @@ router.post('/signup',
           await user.save()
           req.session.username = user.username
           req.session.user = user
-          res.redirect('/')
+          console.log("successful!")
+          res.redirect('/login')
         }
         
         

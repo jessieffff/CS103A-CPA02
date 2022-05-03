@@ -1,19 +1,18 @@
 <div >
-    <h1 class="float-md-left mb-0">The routes are</h1>
-Here we want a ul list with the type, origin, destination
+    <h1 class="text-center">Your Searching Results</h1>
 <hr>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>Route Name</th>
             <th>Route Type</th>
-            <th>Route Origin Stop</th>
-            <th>Route Destination Stop</th>
-            <th>Route Origin Direction</th>
-            <th>Route Destination Direction</th>
+            <th>Origin Stop</th>
+            <th>Destination Stop</th>
+            <th>Origin Direction</th>
+            <th>Destination Direction</th>
         </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
     <% for (route of routes) {
         const name = route.long_name;
         const type = route.fare_class;
@@ -29,8 +28,14 @@ Here we want a ul list with the type, origin, destination
         <td><%= destination_stop %></td>
         <td><%= origin_direction%></td>
         <td><%= destination_direction%></td>
-    </tr>
+      </tr>
     <% } %>
     </tbody>
+    <tfoot>
+        <tr>
+            <td><a class="nav-link active text-center" aria-current="page" href="/routesfinder">Return to searcher</a> </td>
+        </tr>
+    </tfoot>
+
 </table>
 </div>

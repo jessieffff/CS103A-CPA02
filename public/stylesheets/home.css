@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxIem91U3V2a3VRZ3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60");
+    url("https://images.unsplash.com/photo-1589401901631-356b7ae2f5d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJvc3RvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60");
     background-size: cover;
     background-position: center;
 }

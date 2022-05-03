@@ -1,0 +1,34 @@
+<h1>The routes are</h1>
+Here we want a ul list with the type, origin, destination
+<hr>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Route Name</th>
+            <th>Route Type</th>
+            <th>Route Origin Stop</th>
+            <th>Route Destination Stop</th>
+            <th>Route Origin Direction</th>
+            <th>Route Destination Direction</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+    <% for (route of routes) {
+        const name = route.long_name;
+        const type = route.fare_class;
+        const origin_direction = route.direction_origin;
+        const destination_direction = route.direction_destination;
+        const origin_stop = route.direction_origin_stop;
+        const destination_stop = route.direction_destination_stop;
+         %>
+      <tr class="mb-2"> 
+        <td><%= name %></td>
+        <td><%= type %></td>
+        <td><%= origin_stop  %></td>
+        <td><%= destination_stop %></td>
+        <td><%= origin_direction%></td>
+        <td><%= destination_direction%></td>
+    </tr>
+    <% } %>
+    </tbody>
+</table>

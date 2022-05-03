@@ -1,34 +1,78 @@
-<h1>The routes are</h1>
-Here we want a ul list with the type, origin, destination
-<hr>
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Route Name</th>
-            <th>Route Type</th>
-            <th>Route Origin Stop</th>
-            <th>Route Destination Stop</th>
-            <th>Route Origin Direction</th>
-            <th>Route Destination Direction</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-    <% for (route of routes) {
-        const name = route.long_name;
-        const type = route.fare_class;
-        const origin_direction = route.direction_origin;
-        const destination_direction = route.direction_destination;
-        const origin_stop = route.direction_origin_stop;
-        const destination_stop = route.direction_destination_stop;
-         %>
-      <tr class="mb-2"> 
-        <td><%= name %></td>
-        <td><%= type %></td>
-        <td><%= origin_stop  %></td>
-        <td><%= destination_stop %></td>
-        <td><%= origin_direction%></td>
-        <td><%= destination_direction%></td>
-    </tr>
-    <% } %>
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My favorite park</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+
+<body class="d-flex text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-left mb-0">MBTA Scheduler</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-right">
+                    <a class="nav-link"  href="#">Home</a>
+                    <a class="nav-link" href="/about">About</a>
+        
+                    <% if (!loggedIn) {%>
+                          <a class="nav-link" href="/login">Login</a>
+                          <a class="nav-link" href="/register">Register</a>
+                           
+                         
+                        <% } else { %>    
+                            <a class="nav-link  active" aria-current="page" href="/routesfinder">Find Schedule</a>                      
+                            <a class="nav-link" href="/logout">Logout <%= username %></a>
+                        <% } %>
+                    
+                </nav>
+            </div>
+        </header>
+       
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Route Name</th>
+                    <th>Route Type</th>
+                    <th>Route Origin Stop</th>
+                    <th>Route Destination Stop</th>
+                    <th>Route Origin Direction</th>
+                    <th>Route Destination Direction</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <% for (route of routes) {
+                const name = route.long_name;
+                const type = route.fare_class;
+                const origin_direction = route.direction_origin;
+                const destination_direction = route.direction_destination;
+                const origin_stop = route.direction_origin_stop;
+                const destination_stop = route.direction_destination_stop;
+                 %>
+              <tr class="mb-2"> 
+                <td><%= name %></td>
+                <td><%= type %></td>
+                <td><%= origin_stop  %></td>
+                <td><%= destination_stop %></td>
+                <td><%= origin_direction%></td>
+                <td><%= destination_direction%></td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+
+        <footer class="mt-auto text-white-50">
+            <p>&copy; 2022 </p>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <!-- <script src="/js/validateForms.js"></script> -->
+    
+</body>
+</html>
+
+
+

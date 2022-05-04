@@ -1,5 +1,6 @@
 # CS103a CP02
 - Author : Jiefang Li
+- Heroku link: 
 - Zoom video: 
 - This is a course project which has a simple authentication module 
 and provides access to a mongoose database in the cloud.
@@ -25,7 +26,7 @@ and start the project with
 nodemon
 ```
 
-## Use
+## Uses
 - Register as a new user under register page
 ![Register page](public/images/register.png)
 

@@ -11,7 +11,7 @@
         "South",
         "North"
         ],
-        "fare_class": "a",
+        "fare_class": "Rapid Transit",
         "long_name": "Red Line",
         "short_name": "",
         "sort_order": 10010,

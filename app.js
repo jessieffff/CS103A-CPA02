@@ -39,8 +39,7 @@ const mongoose = require( 'mongoose' );
 //const mongodb_URI = process.env.mongodb_URI
 const mongodb_URI = security[0].mongodb_URI;
 console.log(security);
-console.log(mongodb_URI);
-//const mongodb_URI = 'mongodb+srv://jiefangli:gsxpUXJi4FuuPTWW@branda-backend.8qsjk.mongodb.net/DB?retryWrites=true&w=majority'
+//const mongodb_URI='mongodb+srv://jiefangli:gsxpUXJi4FuuPTWW@branda-backend.8qsjk.mongodb.net/DB?retryWrites=true&w=majority'
 
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
@@ -222,7 +221,6 @@ app.use(function(err, req, res, next) {
 //Here we set the port to use between 1024 and 65535  (2^16-1)
 //const port = process.env.PORT; 
 const port = "8080"; 
-console.log('connecting on port '+port)
 
 app.set("port", port);
 

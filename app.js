@@ -13,6 +13,7 @@ const cookieParser = require("cookie-parser"); // to handle cookies
 const session = require("express-session"); // to handle sessions using cookies
 const debug = require("debug")("personalapp:server"); 
 const layouts = require("express-ejs-layouts");
+const security = require('./path.json')
 
 var MongoDBStore = require('connect-mongodb-session')(session);
 
@@ -36,7 +37,10 @@ const routes = require('./public/data/routes.json')
 const mongoose = require( 'mongoose' );
 
 //const mongodb_URI = process.env.mongodb_URI
-const mongodb_URI = 'mongodb+srv://jiefangli:gsxpUXJi4FuuPTWW@branda-backend.8qsjk.mongodb.net/DB?retryWrites=true&w=majority'
+const mongodb_URI = security[0].mongodb_URI;
+console.log(security);
+console.log(mongodb_URI);
+//const mongodb_URI = 'mongodb+srv://jiefangli:gsxpUXJi4FuuPTWW@branda-backend.8qsjk.mongodb.net/DB?retryWrites=true&w=majority'
 
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
@@ -88,8 +92,6 @@ app.set("view engine", "ejs");
 
 
 // this allows us to use page layout for the views 
-// so we don't have to repeat the headers and footers on every page ...
-// the layout is in views/layout.ejs
 app.use(layouts);
 
 // Here we process the requests so they are easy to handle
@@ -141,7 +143,6 @@ app.get("/about", (req, res, next) => {
 });
 
 app.get("/routesfinder", (req, res, next) => {
-  //import MBTA from 'mbta-client';
   res.render("routesfinder");
 });
 
@@ -149,15 +150,14 @@ app.get("/routesfinder", (req, res, next) => {
 /* ************************
   Loading (or reloading) the data into a collection
    ************************ */
-// this route loads in the courses into the Course collection
-// or updates the courses if it is not a new collection
+// this route loads in the routes into the Route collection
+// or updates the route if it is not a new collection
 
 
 app.get('/upsertRoutes',
   async (req,res,next) => {
     await Route.deleteMany({})
     for (route of routes){ 
-      // const {attributes, id, links, relationships}=route;
       const fare_class = route.attributes.fare_class;
       const description = route.attributes.description;
       const direction_origin = route.attributes.direction_names[0];
@@ -166,7 +166,6 @@ app.get('/upsertRoutes',
       const direction_destination_stop = route.attributes.direction_destinations[1];
       const long_name = route.attributes.long_name;
       await Route.findOneAndUpdate({fare_class, description, direction_origin, direction_destination, direction_origin_stop, direction_destination_stop, long_name },route,{upsert:true})
-      // await Route.findOneAndUpdate({attributes,id,links, relationships},route,{upsert:true})
     }
     const num = await Route.find({}).countDocuments();
     res.send("data uploaded: "+num)
@@ -221,7 +220,8 @@ app.use(function(err, req, res, next) {
 //  Starting up the server!
 // *********************************************************** //
 //Here we set the port to use between 1024 and 65535  (2^16-1)
-const port = process.env.PORT || "5050"; 
+//const port = process.env.PORT; 
+const port = "8080"; 
 console.log('connecting on port '+port)
 
 app.set("port", port);
@@ -232,7 +232,7 @@ const { reset } = require("nodemon");
 const { Console } = require("console");
 const server = http.createServer(app);
 
-server.listen(port);
+server.listen(process.env.PORT || port);
 
 function onListening() {
   var addr = server.address();

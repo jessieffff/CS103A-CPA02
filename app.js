@@ -17,8 +17,6 @@ const security = require('./path.json')
 
 var MongoDBStore = require('connect-mongodb-session')(session);
 
-
-
 // *********************************************************** //
 //  Loading models
 // *********************************************************** //
@@ -39,7 +37,6 @@ const mongoose = require( 'mongoose' );
 //const mongodb_URI = process.env.mongodb_URI
 const mongodb_URI = security[0].mongodb_URI;
 console.log(security);
-//const mongodb_URI='mongodb+srv://jiefangli:gsxpUXJi4FuuPTWW@branda-backend.8qsjk.mongodb.net/DB?retryWrites=true&w=majority'
 
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
@@ -172,8 +169,6 @@ app.get('/upsertRoutes',
 )
 
 
-
-
 app.post('/routes/byType',
   async (req,res,next) => {
     const {type} = req.body;
@@ -193,9 +188,6 @@ app.post('/routes/byDestination',
 )
 
 app.use(isLoggedIn)
-
-
-
 
 
 // here we catch 404 errors and forward to error handler

@@ -25,5 +25,6 @@ nodemon
 ```
 
 ## Use
-Register as a new user under register page
+- Register as a new user under register page
+
 ![Register page](public/images/register.png)

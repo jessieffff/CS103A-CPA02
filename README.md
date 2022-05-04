@@ -1,6 +1,6 @@
-# CS103a Express App Demo
-
-This is a starter project which has a simple authentication module 
+# CS103a CP02
+Author : Jiefang Li
+This is a course project which has a simple authentication module 
 and provides access to a mongoose database in the cloud.
 
 ## Installation
@@ -24,3 +24,6 @@ and start the project with
 nodemon
 ```
 
+## Use
+Register as a new user under register page
+![Register page](public/images/register.png)

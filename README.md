@@ -26,7 +26,6 @@ nodemon
 
 ## Use
 - Register as a new user under register page
-
 ![Register page](public/images/register.png)
 
 - Login with your user name and password under login page
@@ -37,7 +36,9 @@ nodemon
 
 - You can either search by routes type (e.g., key bus)
 ![Search by type page](public/images/search_by_type.png)
+![Search by type page](public/images/results_by_type.png)
 
 - Or you can search by destination (e.g., key bus)
+![Search by type page](public/images/search_by_destination.png)
 ![Search by type page](public/images/results_by_destination.png)
 

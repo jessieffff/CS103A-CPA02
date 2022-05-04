@@ -38,7 +38,7 @@ nodemon
 ![Search by type page](public/images/search_by_type.png)
 ![Search by type page](public/images/results_by_type.png)
 
-- Or you can search by destination (e.g., key bus)
+- Or you can search by destination (e.g., south station)
 ![Search by type page](public/images/search_by_destination.png)
 ![Search by type page](public/images/results_by_destination.png)
 

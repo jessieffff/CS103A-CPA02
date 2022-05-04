@@ -28,3 +28,16 @@ nodemon
 - Register as a new user under register page
 
 ![Register page](public/images/register.png)
+
+- Login with your user name and password under login page
+![Login page](public/images/login.png)
+
+- After successful login, go to the searcher
+![Searcher page](public/images/routesfinder.png)
+
+- You can either search by routes type (e.g., key bus)
+![Search by type page](public/images/search_by_type.png)
+
+- Or you can search by destination (e.g., key bus)
+![Search by type page](public/images/results_by_destination.png)
+

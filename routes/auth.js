@@ -58,7 +58,7 @@ router.post('/login',
       if (isMatch) {
         req.session.username = username //req.body
         req.session.user = user
-        res.redirect('/about')
+        res.redirect('/')
       } else {
         req.session.username = null
         req.session.user = null
@@ -102,7 +102,7 @@ router.post('/signup',
           req.session.username = user.username
           req.session.user = user
           console.log("successful!")
-          res.redirect('/login')
+          res.redirect('/')
         }
         
         

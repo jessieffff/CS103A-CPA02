@@ -13,7 +13,7 @@ const cookieParser = require("cookie-parser"); // to handle cookies
 const session = require("express-session"); // to handle sessions using cookies
 const debug = require("debug")("personalapp:server"); 
 const layouts = require("express-ejs-layouts");
-const axios = require("axios")
+
 var MongoDBStore = require('connect-mongodb-session')(session);
 
 
@@ -134,9 +134,7 @@ app.get("/", (req, res, next) => {
   res.render("index");
 });
 
-app.get("/coursefinder", (req, res, next) => {
-  res.render("coursefinder");
-});
+
 
 app.get("/about", (req, res, next) => {
   res.render("about");

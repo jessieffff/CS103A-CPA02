@@ -1,7 +1,7 @@
 # CS103a CP02
 - Author : Jiefang Li
 - Heroku link: https://whispering-journey-41407.herokuapp.com
-- Zoom video: 
+- Zoom video: https://brandeis.zoom.us/rec/share/m5UkbztfFExjXwmCZ7JnHDOwrWs_7Oe2lkDTca0nTiG1MnEVTteV4NmmbMy0U0-M.ymIHx-Kgt7aEDbZ3?startTime=1651707365000
 - This is a course project which has an authentication module 
 and provides access to a mongoose database in the cloud.
 

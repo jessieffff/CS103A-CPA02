@@ -1,6 +1,7 @@
 # CS103a CP02
-Author : Jiefang Li
-This is a course project which has a simple authentication module 
+- Author : Jiefang Li
+- Zoom video: 
+- This is a course project which has a simple authentication module 
 and provides access to a mongoose database in the cloud.
 
 ## Installation
